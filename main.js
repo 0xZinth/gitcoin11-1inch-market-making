@@ -10,8 +10,8 @@ const sushiPrice = require('./sushiPrice.js')
 
 //#region constants
 
-const privateKey = process.env.PRIVATE_KEY;
-const providerUrl = process.env.INFURA_RPC
+const privateKey = process.env.PRIVATE_KEY
+const providerUrl = process.env.RPC
 
 const TRADE_SIZE = process.env.TRADE_SIZE
 
@@ -162,35 +162,4 @@ async function runManyParam(num, msDelay, f, initParam) {
 
 //#endregion
 
-//#region scratch eth btc
-
-async function collectStabPrices(prices) {
-    let quotes = await sushiPrice.getSushiPrices([findTkn('USDC'), findTkn('DAI'),findTkn('USDT')],10)
-    let maxQuote = quotes.reduce((prev, curr)=> prev.priceRes.price > curr.priceRes.price ? prev : curr)
-    prices.push(maxQuote.priceRes.price)
-    console.log(prices)
-    return prices
-}
-
-async function collectEthPrices(prices) {
-    let ePrice = await sushiPrice.get0xPriceSushi(findTkn('USDC'),findTkn('ETH'), 10000)
-    let ethPrice = 1/ePrice.price
-    prices.push(ethPrice)
-    return prices
-}
-
-// coingecko eth: "id": "ethereum",
-// coingecko matic: "id": "matic-network",
-//https://api.coingecko.com/api/v3",
-
-
-async function getGeckPrice(ids, vs_currencies) {
-//e.g. ids = 'ethereum,matic-network', vs_currencies = 'USD'
-    const geckoParams = new URLSearchParams({ ids, vs_currencies })
-    return await axios.get('https://api.coingecko.com/api/v3/simple/price?' + geckoParams)
-}
-
-
-// comments on the api
-// 1. performance fee on create pool
-// 2. way to pass gasLimit and gasPrice
+runMany(process.env.NUM_OF_LOOPS, process.env.LOOP_TIME_MS,stablesStep)

@@ -1,6 +1,5 @@
 const axios = require('axios')
 const { Dhedge, Dapp, Network, Transaction, Pool, ethers } = require("@dhedge/v2-sdk")
-const AddressDB = require("./addresses.js").AddressDB
 const { denomToUnit, unitToDenom, TokensDB, findTkn } = require('./poly-utils.js')
 const IUniswapV2Router = require('./abi/IUniswapV2Router.json')
 const routerAddress = { [Network.POLYGON]: {  [Dapp.SUSHISWAP]: "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506"  } }
@@ -11,9 +10,9 @@ const sushiPrice = require('./sushiPrice.js')
 
 //#region constants
 
-const privateKey = process.env.PRIVATE_KEY;
+const privateKey = process.env.PRIVATE_KEY
 const ownerAddr = process.env.ADDR
-const providerUrl = process.env.INFURA_RPC
+const providerUrl = process.env.RPC
 
 const ETH_TRADE_SIZE=process.env.ETH_TRADE_SIZE
 const ETH_TRIGGER_BP=process.env.ETH_TRIGGER_BP
@@ -179,6 +178,7 @@ async function runManyParam(num, msDelay, f, initParam) {
     return param
 }
 
+runManyParam(process.env.NUM_OF_LOOPS, process.env.LOOP_TIME_MS,ethStep,0)
 
 //#endregion
 
