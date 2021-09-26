@@ -68,7 +68,7 @@ NUM_OF_LOOPS=100000
 
 [Limit Order Protocol Documentation](https://docs.1inch.io/limit-order-protocol/)
 
-Use it right in [1inch dApp](https://app.1inch.io/#/1/classic/limit-order/WETH/DAI)
-Smart Contracts [repository](https://github.com/1inch/limit-order-protocol/)
-Utils library [repository](https://github.com/1inch/limit-order-protocol-utils/)
-REST API ([Ethereum](https://limit-orders.1inch.exchange/swagger/ethereum/), [BSC](https://limit-orders.1inch.exchange/swagger/binance/), [Polygon](https://limit-orders.1inch.exchange/swagger/polygon/))
+- Use it right in [1inch dApp](https://app.1inch.io/#/1/classic/limit-order/WETH/DAI)
+- Smart Contracts [repository](https://github.com/1inch/limit-order-protocol/)
+- Utils library [repository](https://github.com/1inch/limit-order-protocol-utils/)
+- REST API ([Ethereum](https://limit-orders.1inch.exchange/swagger/ethereum/), [BSC](https://limit-orders.1inch.exchange/swagger/binance/), [Polygon](https://limit-orders.1inch.exchange/swagger/polygon/))
