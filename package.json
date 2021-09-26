@@ -1,5 +1,5 @@
 {
-  "name": "dhedge-autostrat",
+  "name": "stables-mm-oneinch",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -9,9 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dhedge/v2-sdk": "^1.0.0",
+    "@1inch/limit-order-protocol": "^1.4.0",
+    "@openzeppelin/contracts": "^4.3.2",
     "axios": "^0.21.1",
     "bignumber.js": "^9.0.1",
-    "ethers": "^5.4.5"
+    "dotenv": "^10.0.0",
+    "ethers": "^5.4.5",
+    "tslib": "^2.3.1",
+    "web3": "^1.5.3"
   }
 }
