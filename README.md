@@ -29,6 +29,9 @@ From: USDT To: DAI remaining: 200.0 at create time:2021-09-25T12:33:12.972Z
 From: DAI To: USDT remaining: 200.0 at create time:2021-09-25T12:32:10.732Z
 ```
 
+Following screen shot from polygonscan shows the swaps happening.
+![swaps](swaps.png)
+
 ## How to run
 
 - Clone this repository
